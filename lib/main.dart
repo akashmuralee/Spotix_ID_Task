@@ -40,13 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image(
-                image: AssetImage("images/spotix_logo_light.png"),
+                image: AssetImage("assets/images/spotix_logo_light.png"),
                 fit: BoxFit.fitWidth),
             CircleAvatar(
               backgroundColor: Colors.white,
               radius: 90,
               child: CircleAvatar(
-                backgroundImage: AssetImage("images/dp.jpg"),
+                backgroundImage: AssetImage("assets/images/dp.jpg"),
                 radius: 80,
               ),
             ),
@@ -74,21 +74,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     _launchURL("tel:+917561881631");
                   },
-                  child: ImageIcon(AssetImage("images/phone.png"),
+                  child: ImageIcon(AssetImage("assets/images/phone.png"),
                       color: Colors.white, size: 30),
                 ),
                 TextButton(
                   onPressed: () {
                     _launchURL("https://github.com/akashmuralee");
                   },
-                  child: ImageIcon(AssetImage("images/github.png"),
+                  child: ImageIcon(AssetImage("assets/images/github.png"),
                       color: Colors.white, size: 30),
                 ),
                 TextButton(
                   onPressed: () {
                     _launchURL("mailto:akashmuralee97@gmail.com");
                   },
-                  child: ImageIcon(AssetImage("images/email.png"),
+                  child: ImageIcon(AssetImage("assets/images/email.png"),
                       color: Colors.white, size: 30),
                 ),
                 
