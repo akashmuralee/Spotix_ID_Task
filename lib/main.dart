@@ -34,12 +34,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         body: Container(
           constraints: BoxConstraints.expand(),
           decoration: BoxDecoration(
           image: DecorationImage(
-                image: NetworkImage("https://i.ibb.co/645LVF4/background.png"),
-              fit: BoxFit.none)
+                image: AssetImage("assets/images/bg.png"),
+              fit: BoxFit.fitHeight,
+              alignment:Alignment.center
+              )
             ),
           child: Padding(
       padding: const EdgeInsets.all(10.0),
@@ -47,17 +50,26 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+
+//SPOTIX LOGO
+
               Image(
                   image: AssetImage("assets/images/spotix_logo_light.png"),
                   fit: BoxFit.fitWidth),
               CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: 90,
+
+//MY PHOTO
+
                 child: CircleAvatar(
                   backgroundImage: AssetImage("assets/images/dp.jpg"),
                   radius: 80,
                 ),
               ),
+
+//NAME AND LOCATION
+
               Column(
                 children: [
                   Text("Akash Muraleedharan",
@@ -75,6 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
+              
+//ICONS WITH LINKS TO CALL,EMAIL AND GITHUB PAGE              
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
