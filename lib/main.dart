@@ -34,73 +34,79 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
+        body: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+          image: DecorationImage(
+                image: NetworkImage("https://i.ibb.co/645LVF4/background.png"),
+              fit: BoxFit.none)
+            ),
+          child: Padding(
       padding: const EdgeInsets.all(10.0),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image(
-                image: AssetImage("assets/images/spotix_logo_light.png"),
-                fit: BoxFit.fitWidth),
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 90,
-              child: CircleAvatar(
-                backgroundImage: AssetImage("assets/images/dp.jpg"),
-                radius: 80,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image(
+                  image: AssetImage("assets/images/spotix_logo_light.png"),
+                  fit: BoxFit.fitWidth),
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 90,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/dp.jpg"),
+                  radius: 80,
+                ),
               ),
-            ),
-            Column(
-              children: [
-                Text("Akash Muraleedharan",
-                    style: TextStyle(color: Colors.white, fontSize: 30)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.place,
-                      color: Colors.white,
-                    ),
-                    Text(" Trivandrum , Kerala",
-                        style: TextStyle(color: Colors.white, fontSize: 26))
-                  ],
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    _launchURL("tel:+917561881631");
-                  },
-                  child: ImageIcon(AssetImage("assets/images/phone.png"),
-                      color: Colors.white, size: 30),
-                ),
-                TextButton(
-                  onPressed: () {
-                    _launchURL("https://github.com/akashmuralee");
-                  },
-                  child: ImageIcon(AssetImage("assets/images/github.png"),
-                      color: Colors.white, size: 30),
-                ),
-                TextButton(
-                  onPressed: () {
-                    _launchURL("mailto:akashmuralee97@gmail.com");
-                  },
-                  child: ImageIcon(AssetImage("assets/images/email.png"),
-                      color: Colors.white, size: 30),
-                ),
-                
+              Column(
+                children: [
+                  Text("Akash Muraleedharan",
+                      style: TextStyle(color: Colors.white, fontSize: 30)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.place,
+                        color: Colors.white,
+                      ),
+                      Text(" Trivandrum , Kerala",
+                          style: TextStyle(color: Colors.white, fontSize: 26))
+                    ],
+                  ),
                 ],
-            ),
-          ],
-        ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      launch("tel:+917561881631");
+                    },
+                    child: ImageIcon(AssetImage("assets/images/phone.png"),
+                        color: Colors.white, size: 30),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      launch("https://github.com/akashmuralee");
+                    },
+                    child: ImageIcon(AssetImage("assets/images/github.png"),
+                        color: Colors.white, size: 30),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      launch("mailto:akashmuralee97@gmail.com");
+                    },
+                    child: ImageIcon(AssetImage("assets/images/email.png"),
+                        color: Colors.white, size: 30),
+                  ),
+                  
+                  ],
+              ),
+            ],
+          ),
       ),
-    ));
+    ),
+        ));
   }
 }
 
-void _launchURL(_url) async =>
-    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
